@@ -5,7 +5,7 @@
 void print_arr(const int *arr, const int size);
 int removeDuplicates(int* nums, int numsSize);
 int main(void) {
-    int size, nunique;
+    int size, newlen;
     int nums[] = {2, 2, 3, 3, 4, 5, 6 , 7, 7};
     size = sizeof(nums)/sizeof(nums[0]);
 
@@ -14,11 +14,11 @@ int main(void) {
     print_arr(nums, size);
     printf("]\n");
 
-    nunique = removeDuplicates(nums, size);
+    newlen = removeDuplicates(nums, size);
     /* Print Output. */
     printf("O: [");
     print_arr(nums, size);
-    printf("], %d\n", nunique);
+    printf("], %d\n", newlen);
     return 0;
 }
 

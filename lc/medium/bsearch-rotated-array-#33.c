@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 
+void print_arr(const int *arr, const int size);
 int search(int* nums, int numsSize, int target);
 int main(void) {
     int nums[] = {8, 10, 11, 14, 0, 1, 2, 3, 4, 5, 6};
@@ -10,13 +11,8 @@ int main(void) {
 
     /* Print the input (array and target) */
     printf("I: [");
-    for (int i = 0; i < numsSize; ++i) {
-        printf("%d", nums[i]);
-        if (i != numsSize-1)
-            printf(", ");
-    }
-    printf("], ");
-    printf("%d\n", target);
+    print_arr(nums, numsSize);
+    printf("], %d\n", target);
 
     /* Print the index of the target or -1 if the search fails. */
     printf("O: %d\n", search(nums, numsSize, target));
@@ -56,3 +52,11 @@ int search(int* nums, int numsSize, int target){
     return -1;
 }
 
+
+void print_arr(const int *arr, const int size) {
+    for (int i = 0; i < size; ++i) {
+        printf("%d", arr[i]);
+        if (i != size-1)
+            printf(", ");
+    }
+}
