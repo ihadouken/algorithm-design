@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 int search(int* nums, int numsSize, int target);
-int main() {
+int main(void) {
     int nums[] = {8, 10, 11, 14, 0, 1, 2, 3, 4, 5, 6};
     int numsSize = sizeof(nums)/sizeof(nums[0]);
     int target = 1;

@@ -6,7 +6,7 @@
 
 int searchInsert(int* nums, int numsSize, int target);
 
-int main() {
+int main(void) {
     int len, loc;
     int nums[] = {0, 1, 3, 5, 7, 9, 11};
 
