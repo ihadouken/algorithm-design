@@ -12,9 +12,8 @@ int main(void) {
      * a character with null which produces segfault
      * as the 'literal' string is read-only */
     char input[] = "dsbba";
-    char *pdrome = max_pdrome(input);
-
-    printf("Output: %s\n", pdrome);
+    printf("I: %s\n", input);
+    printf("O: %s\n", max_pdrome(input));
     return 0;
 }
 

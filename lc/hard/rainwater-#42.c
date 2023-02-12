@@ -2,11 +2,18 @@
 
 #include <stdio.h>
 
+void print_arr(const int *arr, const int size);
 int trap(int *height, int heightSize);
+
 int main(void) {
-    int height[] = {0,1,0,2,1,0,1,3,2,1,2,1};
     /*int height[] = {4, 2, 0, 3, 2, 5};*/
-    printf("%d\n", trap(height, sizeof(height)/sizeof(height[0])));
+    int height[] = {0,1,0,2,1,0,1,3,2,1,2,1};
+    int size = sizeof(height)/sizeof(height[0]);
+
+    printf("I: [");
+    print_arr(height, size);
+    printf("]\n");
+    printf("O: %d\n", trap(height, size));
     return 0;
 }
 
@@ -40,3 +47,13 @@ int trap(int *height, int heightSize) {
     }
     return stored;
 }
+
+void print_arr(const int *arr, const int size) {
+    for (int i = 0; i < size; ++i) {
+        printf("%d", arr[i]);
+        if (i != size-1) {
+            printf(", ");
+        }
+    }
+}
+

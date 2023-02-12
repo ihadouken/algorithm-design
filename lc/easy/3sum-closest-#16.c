@@ -3,17 +3,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void print_arr(const int *arr, const int size);
 int closest_triplet_sum(int* arr, int len, int target);
 int closest_duet_sum(int* arr, int len, int target);
 unsigned int abs_val(int val);
 int cmpfunc (const void * a, const void * b);
 
 int main(void) {
-    // int result, nums[] = {5, 12, -9, 43, 2, -65, 3, 4, 19, 23, -11};
-    int result, nums[] = {2, 100, 150, 8, 10, 200};
+    int size, target;
+    // int nums[] = {5, 12, -9, 43, 2, -65, 3, 4, 19, 23, -11};
+    int nums[] = {2, 100, 150, 8, 10, 200};
+    size = sizeof(nums)/sizeof(nums[0]);
+    target = 214;
 
-    result = closest_triplet_sum(nums, sizeof(nums)/sizeof(nums[0]), 214);
-    printf("Closest sum: %d\n", result);
+    printf("I: [");
+    print_arr(nums, size);
+    printf("], %d\n", target);
+    printf("O: %d\n", closest_triplet_sum(nums, size, 214));
     return 0;
 }
 
@@ -55,3 +61,13 @@ unsigned int abs_val(int val) {
 int cmpfunc (const void * a, const void * b) {
    return ( *(int*)a - *(int*)b );
 }
+
+void print_arr(const int *arr, const int size) {
+    for (int i = 0; i < size; ++i) {
+        printf("%d", arr[i]);
+        if (i != size-1) {
+            printf(", ");
+        }
+    }
+}
+
