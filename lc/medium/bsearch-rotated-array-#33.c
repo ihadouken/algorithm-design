@@ -10,9 +10,9 @@ int main(void) {
     int target = 1;
 
     /* Print the input (array and target) */
-    printf("I: [");
+    printf("I: ");
     print_arr(nums, numsSize);
-    printf("], %d\n", target);
+    printf(", %d\n", target);
 
     /* Print the index of the target or -1 if the search fails. */
     printf("O: %d\n", search(nums, numsSize, target));
@@ -54,9 +54,11 @@ int search(int* nums, int numsSize, int target){
 
 
 void print_arr(const int *arr, const int size) {
+    putchar('[');
     for (int i = 0; i < size; ++i) {
         printf("%d", arr[i]);
         if (i != size-1)
             printf(", ");
     }
+    putchar(']');
 }

@@ -10,25 +10,27 @@ int main(void) {
     size = sizeof(nums)/sizeof(nums[0]);
 
     /* Print Input. */
-    printf("I: [");
+    printf("I: ");
     print_arr(nums, size);
-    printf("]\n");
+    putchar('\n');
 
     newlen = removeDuplicates(nums, size);
     /* Print Output. */
-    printf("O: [");
+    printf("O: ");
     print_arr(nums, size);
-    printf("], %d\n", newlen);
+    printf(", %d\n", newlen);
     return 0;
 }
 
 void print_arr(const int *arr, const int size) {
+    putchar('[');
     for (int i = 0; i < size; ++i) {
         printf("%d", arr[i]);
         if (i != size-1) {
             printf(", ");
         }
     }
+    putchar(']');
 }
 
 int removeDuplicates(int* nums, int numsSize){

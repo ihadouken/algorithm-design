@@ -16,9 +16,9 @@ int main(void) {
     size = sizeof(nums)/sizeof(nums[0]);
     target = 214;
 
-    printf("I: [");
+    printf("I: ");
     print_arr(nums, size);
-    printf("], %d\n", target);
+    printf(", %d\n", target);
     printf("O: %d\n", closest_triplet_sum(nums, size, 214));
     return 0;
 }
@@ -63,11 +63,13 @@ int cmpfunc (const void * a, const void * b) {
 }
 
 void print_arr(const int *arr, const int size) {
+    putchar('[');
     for (int i = 0; i < size; ++i) {
         printf("%d", arr[i]);
         if (i != size-1) {
             printf(", ");
         }
     }
+    putchar(']');
 }
 

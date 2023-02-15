@@ -10,9 +10,9 @@ int main(void) {
     int height[] = {0,1,0,2,1,0,1,3,2,1,2,1};
     int size = sizeof(height)/sizeof(height[0]);
 
-    printf("I: [");
+    printf("I: ");
     print_arr(height, size);
-    printf("]\n");
+    putchar('\n');
     printf("O: %d\n", trap(height, size));
     return 0;
 }
@@ -49,11 +49,13 @@ int trap(int *height, int heightSize) {
 }
 
 void print_arr(const int *arr, const int size) {
+    putchar('[');
     for (int i = 0; i < size; ++i) {
         printf("%d", arr[i]);
         if (i != size-1) {
             printf(", ");
         }
     }
+    putchar(']');
 }
 

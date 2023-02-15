@@ -14,9 +14,9 @@ int main(void) {
     target = 12;
 
     /* Print Input. */
-    printf("I: [");
+    printf("I: ");
     print_arr(nums, size);
-    printf("], %d\n", target);
+    printf(", %d\n", target);
 
     /* Print Output. */
     printf("O: %d", searchInsert(nums, size, target));
@@ -43,11 +43,13 @@ int searchInsert(int* nums, int numsSize, int target) {
 }
 
 void print_arr(const int *arr, const int size) {
+    putchar('[');
     for (int i = 0; i < size; ++i) {
         printf("%d", arr[i]);
         if (i != size-1) {
             printf(", ");
         }
     }
+    putchar(']');
 }
 

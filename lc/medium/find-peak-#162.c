@@ -11,9 +11,9 @@ int main(void) {
     int nums[] = {1, 2, 1, 3, 5, 6, 4};
     int size = sizeof(nums)/sizeof(nums[0]);
 
-    printf("I: [");
+    printf("I: ");
     print_arr(nums, size);
-    printf("]\n");
+    putchar('\n');
 
     printf("O: %d\n", findPeakElement(nums, size));
     return 0;
@@ -35,11 +35,13 @@ int findPeakElement(int* nums, int numsSize){
 }
 
 void print_arr(const int *arr, const int size) {
+    putchar('[');
     for (int i = 0; i < size; ++i) {
         printf("%d", arr[i]);
         if (i != size-1) {
             printf(", ");
         }
     }
+    putchar(']');
 }
 
